@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tramas Escucha a Víctimas de Violencia, A.C.</title>
+  <meta name="description" content="Asociación dedicada a la intervención clínica, publicaciones, blog y herramientas didácticas.">
+  <link rel="icon" href="assets/logo.png" sizes="192x192">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Spectral:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-inner glass">
+      <img src="assets/logo.png" alt="Logo Tramas Escucha" class="logo-lg">
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#conocenos" class="nav-link">Conócenos</a></li>
+          <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
+          <li><a href="#donaciones" class="nav-link">Donaciones</a></li>
+          <li><a href="#herramientas" class="nav-link">Herramientas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="assets/logo.png" alt="Logo Tramas Escucha" class="logo-hero">
+      <h1>Tramas Escucha a Víctimas de Violencia, A.C.</h1>
+      <p>Atención profesional, intervención clínica, publicaciones y recursos de apoyo para víctimas de violencia.</p>
+      <a href="#conocenos" class="btn neumorph">Conócenos</a>
+    </div>
+    <svg class="svg-divider" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,0V53.29c47.84,22,103.61,19.16,148.73,3.87C289.4,25,338.17,7,393.86,1.36,474.18-6.83,551.57,21.08,628,35.59c69.56,13.24,140.78,16.43,210.37,3.37,48.57-9.17,96.17-28.53,142.66-40.58,66-17,132.68-14.34,199.32-1.63,46.9,9.17,93.91,25.69,140.65,35.88C1371,47,1405.5,52.86,1440,58.72V0Z" fill="#fff"/></svg>
+  </section>
+
+  <section id="carousel-section" class="section">
+    <div id="carousel" class="carousel"></div>
+    <div class="carousel-dots" id="carousel-dots"></div>
+    <svg class="svg-divider" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,0C150,80,350,80,600,0C900,-80,1300,120,1440,40V80H0Z" fill="#F6F7FA"/></svg>
+  </section>
+
+  <section id="conocenos" class="section">
+    <h2>Conócenos</h2>
+    <div class="cards">
+      <div class="card glass" tabindex="0">
+        <h3>Equipo Operativo</h3>
+        <p>Especialistas en intervención clínica y atención integral a víctimas.</p>
+        <button onclick="showModal('Equipo Operativo', 'Aquí irá la información de los integrantes de tu equipo. Puedes poner fotos, nombres y especialidad.')">Ver más</button>
+      </div>
+      <div class="card glass" tabindex="0">
+        <h3>Intervenciones Clínicas</h3>
+        <p>Proyectos, talleres y acciones de impacto social.</p>
+        <button onclick="showModal('Intervenciones Clínicas', 'Aquí puedes listar proyectos, talleres y resultados.')">Ver más</button>
+      </div>
+      <div class="card glass" tabindex="0">
+        <h3>Publicaciones Académicas</h3>
+        <p>Artículos, ponencias y divulgación científica.</p>
+        <button onclick="showModal('Publicaciones Académicas', 'Lista de artículos, ponencias, libros o informes.')">Ver más</button>
+      </div>
+    </div>
+    <svg class="svg-divider" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,80C150,0,350,0,600,80C900,160,1300,-40,1440,40V0H0Z" fill="#fff"/></svg>
+  </section>
+
+  <section id="testimonios" class="section glass">
+    <h2>Testimonios</h2>
+    <div class="testimonials">
+      <blockquote>
+        <p>“Gracias a Tramas Escucha encontré apoyo y herramientas para enfrentar una situación muy difícil. Recomiendo su trabajo profesional y humano.”</p>
+        <footer>- Ana G.</footer>
+      </blockquote>
+      <blockquote>
+        <p>“El equipo fue empático y realmente escuchó lo que necesitaba. Me sentí acompañada en todo momento.”</p>
+        <footer>- Luisa M.</footer>
+      </blockquote>
+      <blockquote>
+        <p>“Las intervenciones clínicas me ayudaron a recuperar mi tranquilidad. Excelente asociación.”</p>
+        <footer>- María V.</footer>
+      </blockquote>
+    </div>
+    <svg class="svg-divider" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,0C150,80,350,80,600,0C900,-80,1300,120,1440,40V80H0Z" fill="#F6F7FA"/></svg>
+  </section>
+
+  <section id="blog" class="section" style="display:none">
+    <h2>Blog</h2>
+    <div id="blog-list" class="blog-list"></div>
+  </section>
+
+  <section id="donaciones" class="section" style="display:none">
+    <h2>Donaciones</h2>
+    <div class="donation-container">
+      <div class="donation-card neumorph">
+        <img src="assets/mercadopago.png" alt="MercadoPago" style="height:32px;">
+        <a href="https://www.mercadopago.com/tu-link" target="_blank" class="btn grad">Donar con MercadoPago</a>
+      </div>
+      <div class="donation-card neumorph">
+        <h3>Transferencia bancaria</h3>
+        <p><strong>Banco:</strong> BBVA</p>
+        <p><strong>Cuenta:</strong> 1234567890</p>
+        <p><strong>CLABE:</strong> 012345678901234567</p>
+        <p><strong>Beneficiario:</strong> Tramas Escucha a Víctimas de Violencia, A.C.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="herramientas" class="section" style="display:none">
+    <h2>Herramientas Didácticas</h2>
+    <ul class="tools-list">
+      <li><a href="https://mtrojosafat.github.io/BetaApp/" target="_blank">Diagnóstico TEA DSM-5-TR</a></li>
+    </ul>
+  </section>
+
+  <dialog id="modal" class="modal glass">
+    <form method="dialog">
+      <h3 id="modalTitle"></h3>
+      <div id="modalBody"></div>
+      <button class="btn neumorph" aria-label="Cerrar">Cerrar</button>
+    </form>
+  </dialog>
+
+  <footer>
+    <p>&copy; 2025 Tramas Escucha a Víctimas de Violencia, A.C.</p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
