@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico TEA DSM-5-TR (PWA)</title>
+    <meta name="description" content="Diagnóstico del Trastorno del Espectro Autista (TEA) - DSM-5-TR. Material interactivo y adaptado a móviles.">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon-192.png" sizes="192x192">
+    <meta name="theme-color" content="#19171a">
+    <!-- Google Fonts: Gothic style but highly readable -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Spectral:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Diagnóstico del Trastorno del Espectro Autista (TEA)</h1>
+        <p>DSM-5-TR · Herramientas y Evaluación</p>
+        <button id="installBtn" class="pwa-install-btn" style="display:none">Instalar App</button>
+    </header>
+
+    <nav class="tab-container" role="tablist" aria-label="Secciones principales">
+        <button class="tab active" data-tab="criterios" role="tab" aria-selected="true" tabindex="0">Criterios</button>
+        <button class="tab" data-tab="instrumentos" role="tab" aria-selected="false" tabindex="0">Instrumentos</button>
+        <button class="tab" data-tab="evaluacion" role="tab" aria-selected="false" tabindex="0">Evaluación</button>
+    </nav>
+
+    <main>
+        <section id="criterios" class="tab-content active" role="tabpanel">
+            <h2>Criterios diagnósticos del TEA según el DSM-5-TR</h2>
+            <article class="criteria-container">
+                <div class="criteria-title">A. Déficits en comunicación e interacción social (≥ 3 de los siguientes):</div>
+                <ol>
+                    <li>Déficits en reciprocidad socioemocional (ej., dificultad para iniciar o mantener conversaciones).</li>
+                    <li>Déficits en conductas comunicativas no verbales (ej., contacto visual reducido, gestos anormales).</li>
+                    <li>Dificultad para desarrollar/mantener relaciones (ej., ausencia de interés en pares).</li>
+                </ol>
+            </article>
+            <article class="criteria-container">
+                <div class="criteria-title">B. Patrones restrictivos/repetitivos de comportamiento (≥ 2 de los siguientes):</div>
+                <ol>
+                    <li>Movimientos o uso repetitivo de objetos (ej., estereotipias, ecolalia).</li>
+                    <li>Insistencia en la monotonía (ej., resistencia a cambios, rutinas rígidas).</li>
+                    <li>Intereses restrictivos/fijos (ej., hiperfocalización en temas específicos).</li>
+                    <li>Hiper o hiporeactividad sensorial (ej., indiferencia al dolor, fascinación por luces).</li>
+                </ol>
+            </article>
+            <article class="criteria-container">
+                <div class="criteria-title">Otros criterios:</div>
+                <ul>
+                    <li><strong>C.</strong> Síntomas desde la infancia temprana (aunque pueden manifestarse plenamente más tarde).</li>
+                    <li><strong>D.</strong> Alteración clínicamente significativa en áreas sociales, ocupacionales u otras.</li>
+                    <li><strong>E.</strong> No explicado mejor por discapacidad intelectual o retraso global del desarrollo.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="instrumentos" class="tab-content" role="tabpanel">
+            <h2>Instrumentos para el diagnóstico de TEA</h2>
+            <div class="instrument-grid">
+                <button class="instrument-card" aria-label="Detalles ADOS-2" tabindex="0" onclick="showModal('ADOS-2', 'Escala estandarizada con actividades para evaluar comunicación, juego e interacción social. Desde 12 meses hasta adultos. Considerado el estándar de oro para TEA.')">
+                    <span class="instrument-name">ADOS-2</span>
+                    <span class="instrument-short">Estándar de oro</span>
+                </button>
+                <button class="instrument-card" aria-label="Detalles ADI-R" tabindex="0" onclick="showModal('ADI-R', 'Entrevista semiestructurada a padres para evaluar conductas asociadas al TEA. A partir de 2 años (evalúa conductas desde los 4-5 años). Evalúa lenguaje/comunicación, interacción social y comportamientos restringidos/repetitivos.')">
+                    <span class="instrument-name">ADI-R</span>
+                    <span class="instrument-short">Entrevista a padres</span>
+                </button>
+                <button class="instrument-card" aria-label="Detalles M-CHAT-R/F" tabindex="0" onclick="showModal('M-CHAT-R/F', 'Cuestionario de screening para niños pequeños. 16 a 30 meses. 20 preguntas a padres, con seguimiento para positivos.')">
+                    <span class="instrument-name">M-CHAT-R/F</span>
+                    <span class="instrument-short">Screening temprano</span>
+                </button>
+                <button class="instrument-card" aria-label="Detalles Escalas complementarias" tabindex="0" onclick="showModal('Escalas complementarias', 'Cognitiva: WISC-V, WPPSI-IV. Lenguaje: PLS-5, CELF-5. Sensorial: Perfil Sensorial de Dunn, SPM.')">
+                    <span class="instrument-name">Escalas complementarias</span>
+                    <span class="instrument-short">Cognitiva, lenguaje, sensorial</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="evaluacion" class="tab-content" role="tabpanel">
+            <h2>Evaluación de conocimientos</h2>
+            <p>Selecciona tu nivel:</p>
+            <div class="quiz-levels">
+                <button class="quiz-level inicial" data-quiz="inicial" tabindex="0">Inicial</button>
+                <button class="quiz-level medio" data-quiz="medio" tabindex="0">Medio</button>
+                <button class="quiz-level superior" data-quiz="superior" tabindex="0">Superior</button>
+            </div>
+            <div id="quiz-inicial" class="quiz-container"></div>
+            <div id="quiz-medio" class="quiz-container"></div>
+            <div id="quiz-superior" class="quiz-container"></div>
+        </section>
+    </main>
+
+    <dialog id="modal" class="modal" aria-modal="true">
+        <form method="dialog">
+            <h3 id="modalTitle"></h3>
+            <p id="modalBody"></p>
+            <button class="btn-close" aria-label="Cerrar" tabindex="0">Cerrar</button>
+        </form>
+    </dialog>
+
+    <div class="references">
+        <h2>Referencias</h2>
+        <p>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed., text rev.).</p>
+        <p>Lord, C., Rutter, M., DiLavore, P. C., Risi, S., Gotham, K., & Bishop, S. L. (2012). <em>Autism Diagnostic Observation Schedule, Second Edition (ADOS-2)</em>. Western Psychological Services.</p>
+        <p>Robins, D. L., Fein, D., Barton, M. L., & Green, J. A. (2014). The Modified Checklist for Autism in Toddlers, Revised with Follow-Up (M-CHAT-R/F). <em>Pediatrics, 133</em>(1), 37–45.</p>
+        <p>Rutter, M., Le Couteur, A., & Lord, C. (2003). <em>Autism Diagnostic Interview-Revised (ADI-R)</em>. Western Psychological Services.</p>
+    </div>
+
+    <footer>
+        <p>© 2025 Desarrollado por Psic. Josafat Acosta García</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
